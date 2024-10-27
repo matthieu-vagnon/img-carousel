@@ -6,11 +6,11 @@
 
 # Roadmap
 
-| Task                                      | Priority | Status |
-| ----------------------------------------- | -------- | ------ |
-| - [x] ~~Create the script behind scroll~~ | !!!      | ✅     |
-| - [x] ~~Animate the transition~~          | !!!      | ✅     |
-| - [x] ~~Add effects on images~~           | !!       | ✅     |
+| Task                                       | Priority | Status |
+| ------------------------------------------ | -------- | ------ |
+| - [x] \~~Create the script behind scroll~~ | !!!      | ✅     |
+| - [x] \~~Animate the transition~~          | !!!      | ✅     |
+| - [x] \~~Add effects on images~~           | !!       | ✅     |
 
 # Project informations
 
