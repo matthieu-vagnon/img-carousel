@@ -16,7 +16,7 @@
 
 ## Description
 
-This is a simple images carousel.
+This is a simple image carousel.
 
 ## Tech stack
 
