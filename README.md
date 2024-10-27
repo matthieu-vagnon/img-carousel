@@ -6,11 +6,11 @@
 
 # Roadmap
 
-| Task                                | Priority | Status |
-| ----------------------------------- | -------- | ------ |
-| ~~Create the script behind scroll~~ | !!!      | ✅     |
-| ~~Animate the transition~~          | !!!      | ✅     |
-| ~~Add effects on images~~           | !!       | ✅     |
+| Task                                      | Priority | Status |
+| ----------------------------------------- | -------- | ------ |
+| - [x] ~~Create the script behind scroll~~ | !!!      | ✅     |
+| - [x] ~~Animate the transition~~          | !!!      | ✅     |
+| - [x] ~~Add effects on images~~           | !!       | ✅     |
 
 # Project informations
 
@@ -20,7 +20,7 @@ This is a simple image carousel.
 
 ## Tech stack
 
-The component was built using the following stacks:
+This component was built using the following tools:
 
 - React.js
 - TypeScript
