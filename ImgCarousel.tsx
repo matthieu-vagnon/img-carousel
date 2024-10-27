@@ -1,20 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "./Carousel.css";
 
-// #region Component configuration
-
-// Sliding speed in ms
-const slideSpeed = 5000;
-
-// Images paths (minimum 2 images)
-const images = ["japan.png", "paris.png", "new-york.png"];
-
-// Noise opacity
-const noiseOpacity = 0.6;
-
-// #endregion
-
-export default function Carousel() {
+interface ImgCarouselProps {
+  images: Array<string>;
+  slideSpeed?: number;
+  noiseOpacity?: number;
+}
+export default function ImgCarousel(props: ImgCarouselProps) {
+  const { images, slideSpeed, noiseOpacity, ...other } = props;
   const [current, setCurrent] = useState(0);
   const [img0, setImg0] = useState(images.length - 1);
   const [img1, setImg1] = useState(0);
@@ -28,15 +21,18 @@ export default function Carousel() {
       document.querySelector(".carousel-img.img-right"),
     ];
 
-    const slide = setTimeout(() => {
-      imgElements[0]?.classList.replace("img-left", "img-right");
-      imgElements[1]?.classList.replace("img-center", "img-left");
-      imgElements[2]?.classList.replace("img-right", "img-center");
-      setImgs[current % imgElements.length](
-        (current + imgElements.length - 1) % images.length
-      );
-      setCurrent((prevState) => prevState + 1);
-    }, slideSpeed);
+    const slide = setTimeout(
+      () => {
+        imgElements[0]?.classList.replace("img-left", "img-right");
+        imgElements[1]?.classList.replace("img-center", "img-left");
+        imgElements[2]?.classList.replace("img-right", "img-center");
+        setImgs[current % imgElements.length](
+          (current + imgElements.length - 1) % images.length
+        );
+        setCurrent((prevState) => prevState + 1);
+      },
+      slideSpeed ? slideSpeed : 10000
+    );
 
     return () => {
       clearTimeout(slide);
@@ -45,11 +41,11 @@ export default function Carousel() {
 
   return (
     <React.Fragment>
-      <div className="carousel-container">
+      <div className="carousel-container" {...other}>
         <div
           className="noise"
           style={{
-            opacity: noiseOpacity,
+            opacity: noiseOpacity ? noiseOpacity : 0,
           }}
         >
           <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
