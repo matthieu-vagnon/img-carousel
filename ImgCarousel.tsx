@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./ImgCarousel.css";
 
+// Author: M. Vagnon
+
 interface ImgCarouselProps {
   images: Array<string>;
   slideSpeed?: number;
