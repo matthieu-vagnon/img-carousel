@@ -40,6 +40,6 @@ The app has the following features, designed to showcase my competences:
 
 ## Props
 
-| Prop   | Type          | Required | Description                                       |
-| ------ | ------------- | -------- | ------------------------------------------------- |
-| images | Array<string> | Yes      | Collection of images, with a minimum of 2 images. |
+| Prop     | Type            | Required | Description                                       |
+| -------- | --------------- | -------- | ------------------------------------------------- |
+| `images` | `Array<string>` | Yes      | Collection of images, with a minimum of 2 images. |
