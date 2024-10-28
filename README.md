@@ -6,6 +6,7 @@
   - [Description](#description)
   - [Tech stack](#tech-stack)
   - [Features](#features)
+  - [Props](#props)
 
 # Roadmap
 
@@ -36,3 +37,9 @@ The app has the following features, designed to showcase my competences:
 | Functionality  | Description                                   |
 | -------------- | --------------------------------------------- |
 | Image carousel | Automatically slide image on a regular basis. |
+
+## Props
+
+| Prop   | Type          | Required | Description                                       |
+| ------ | ------------- | -------- | ------------------------------------------------- |
+| images | Array<string> | Yes      | Collection of images, with a minimum of 2 images. |
