@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./ImgCarousel.css";
 
 // Author: M. Vagnon
@@ -16,30 +16,44 @@ export default function ImgCarousel(props: ImgCarouselProps) {
   const [img2, setImg2] = useState(1 % images.length);
   const setImgs = [setImg0, setImg1, setImg2];
 
-  useEffect(() => {
-    const imgElements = [
-      document.querySelector(".carousel-img.img-left"),
-      document.querySelector(".carousel-img.img-center"),
-      document.querySelector(".carousel-img.img-right"),
-    ];
+  function useInterval(callback: () => void, delay: number) {
+    const savedCallback = useRef() as React.MutableRefObject<() => void>;
 
-    const slide = setTimeout(
-      () => {
-        imgElements[0]?.classList.replace("img-left", "img-right");
-        imgElements[1]?.classList.replace("img-center", "img-left");
-        imgElements[2]?.classList.replace("img-right", "img-center");
-        setImgs[current % imgElements.length](
-          (current + imgElements.length - 1) % images.length
-        );
-        setCurrent((prevState) => prevState + 1);
-      },
-      slideSpeed ? slideSpeed : 10000
-    );
+    // Remember the latest callback
+    useEffect(() => {
+      savedCallback.current = callback;
+    }, [callback]);
 
-    return () => {
-      clearTimeout(slide);
-    };
-  }, [current]);
+    // Set up the interval
+    useEffect(() => {
+      function tick() {
+        savedCallback.current();
+      }
+      if (delay !== null) {
+        const id = setInterval(tick, delay);
+        return () => clearInterval(id);
+      }
+    }, [delay]);
+  }
+
+  useInterval(
+    () => {
+      const imgElements = [
+        document.querySelector(".carousel-img.img-left"),
+        document.querySelector(".carousel-img.img-center"),
+        document.querySelector(".carousel-img.img-right"),
+      ];
+
+      imgElements[0]?.classList.replace("img-left", "img-right");
+      imgElements[1]?.classList.replace("img-center", "img-left");
+      imgElements[2]?.classList.replace("img-right", "img-center");
+      setImgs[current % imgElements.length](
+        (current + imgElements.length - 1) % images.length
+      );
+      setCurrent((prevState) => prevState + 1);
+    },
+    slideSpeed ? slideSpeed : 10000
+  );
 
   return (
     <React.Fragment>
