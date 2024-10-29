@@ -14,7 +14,6 @@
 | ----------------------------------- | -------- | ------ |
 | ~~Create the script behind scroll~~ | !!!      | ✅     |
 | ~~Animate the transition~~          | !!!      | ✅     |
-| ~~Add effects on images~~           | !!       | ✅     |
 
 # Project informations
 
@@ -40,8 +39,7 @@ The app has the following features, designed to showcase my competences:
 
 ## Props
 
-| Prop           | Type            | Required (default value) | Description                                              |
-| -------------- | --------------- | ------------------------ | -------------------------------------------------------- |
-| `images`       | `Array<string>` | Yes                      | Collection of images, with a minimum of 2 images.        |
-| `slideSpeed`   | `number`        | No (10000)               | Carousel slide speed in ms.                              |
-| `noiseOpacity` | `number`        | No (0)                   | Optional noise that can be added to the carousel images. |
+| Prop         | Type            | Required (default value) | Description                                       |
+| ------------ | --------------- | ------------------------ | ------------------------------------------------- |
+| `images`     | `Array<string>` | Yes                      | Collection of images, with a minimum of 2 images. |
+| `slideSpeed` | `number`        | No (10000)               | Carousel slide speed in ms.                       |
