@@ -1,10 +1,10 @@
-# Table of contents
+# Table of Contents
 
-- [Table of contents](#table-of-contents)
+- [Table of Contents](#table-of-contents)
 - [Roadmap](#roadmap)
-- [Project informations](#project-informations)
+- [Project Informations](#project-informations)
   - [Description](#description)
-  - [Tech stack](#tech-stack)
+  - [Tech Stack](#tech-stack)
   - [Features](#features)
   - [Props](#props)
 
@@ -15,13 +15,13 @@
 | ~~Create the script behind scroll~~ | !!!      | ✅     |
 | ~~Animate the transition~~          | !!!      | ✅     |
 
-# Project informations
+# Project Informations
 
 ## Description
 
 This is a simple image carousel.
 
-## Tech stack
+## Tech Stack
 
 This component was built using the following tools:
 
