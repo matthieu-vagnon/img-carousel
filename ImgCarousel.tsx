@@ -38,14 +38,23 @@ export default function ImgCarousel(props: ImgCarouselProps) {
   useInterval(
     () => {
       const imgElements = [
-        document.querySelector(".carousel-img.img-left"),
-        document.querySelector(".carousel-img.img-center"),
-        document.querySelector(".carousel-img.img-right"),
+        document.querySelector(".carousel-img.carousel-img-left"),
+        document.querySelector(".carousel-img.carousel-img-center"),
+        document.querySelector(".carousel-img.carousel-img-right"),
       ];
 
-      imgElements[0]?.classList.replace("img-left", "img-right");
-      imgElements[1]?.classList.replace("img-center", "img-left");
-      imgElements[2]?.classList.replace("img-right", "img-center");
+      imgElements[0]?.classList.replace(
+        "carousel-img-left",
+        "carousel-img-right"
+      );
+      imgElements[1]?.classList.replace(
+        "carousel-img-center",
+        "carousel-img-left"
+      );
+      imgElements[2]?.classList.replace(
+        "carousel-img-right",
+        "carousel-img-center"
+      );
       setImgs[current % imgElements.length](
         (current + imgElements.length - 1) % images.length
       );
@@ -56,21 +65,21 @@ export default function ImgCarousel(props: ImgCarouselProps) {
 
   return (
     <React.Fragment>
-      <div className="carousel-container" {...other}>
+      <div className="carousel" {...other}>
         <div
-          className="carousel-img img-left"
+          className="carousel-img carousel-img-left"
           style={{
             backgroundImage: `url(${images[img0]})`,
           }}
         />
         <div
-          className="carousel-img img-center"
+          className="carousel-img carousel-img-center"
           style={{
             backgroundImage: `url(${images[img1]})`,
           }}
         />
         <div
-          className="carousel-img img-right"
+          className="carousel-img carousel-img-right"
           style={{
             backgroundImage: `url(${images[img2]})`,
           }}
