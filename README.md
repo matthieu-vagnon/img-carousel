@@ -27,7 +27,7 @@ This component was built using the following tools:
 
 - React.js
 - TypeScript
-- CSS
+- JS/JSX/HTML/CSS
 
 ## Features
 
