@@ -1,19 +1,11 @@
 # Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Roadmap](#roadmap)
 - [Project Informations](#project-informations)
   - [Description](#description)
   - [Tech Stack](#tech-stack)
   - [Features](#features)
   - [Props](#props)
-
-# Roadmap
-
-| Task                                | Priority | Status |
-| ----------------------------------- | -------- | ------ |
-| ~~Create the script behind scroll~~ | !!!      | ✅     |
-| ~~Animate the transition~~          | !!!      | ✅     |
 
 # Project Informations
 
